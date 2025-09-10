@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Pastelería Mil Sabores</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -19,7 +19,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
@@ -45,26 +45,91 @@
     </header>
     <main>
         <section class="container" id="Inicio-sesion-registro">
-            <div class="row mt-4">
+            <div class="row mt-3">
                 <div class="col-lg-12" style="text-align: right;">
                     <a href="">Iniciar Sesion</a>
                     <a href="">Registrarse</a>
                 </div>
             </div>
-        </section>    
+        </section>
 
         <section class="container" id="Informacion_tienda">
-            <div class="row mt-4">
-                <div class="col-lg-6 text-center">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
                     <h1>Tienda Online</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam earum esse veritatis molestias, distinctio fugit, adipisci eaque ab vero, reiciendis perspiciatis illo quod aliquid eveniet. Saepe qui voluptas numquam esse.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam earum esse veritatis
+                        molestias, distinctio fugit, adipisci eaque ab vero, reiciendis perspiciatis illo quod aliquid
+                        eveniet. Saepe qui voluptas numquam esse.</p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="assets/images/imagen_pasteleria.jpg" alt="Logo" width="300" height="200">
+                    <img src="assets/images/imagen_pasteleria.jpg" alt="Logo" style="max-width: 500px">
                 </div>
             </div>
         </section>
 
+        <section class="container" id="productos">
+
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2>Nuestros Productos</h2>
+                </div>
+            </div>
+
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                        <div class="card h-100" style="width: 18rem;">
+                            <img src="assets/images/torta_chocolate.png" class="card-img-top" alt="Torta de Chocolate"
+                                style="height: 250px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Torta Cuadrada de Chocolate</h5>
+                                <p class="card-text">Deliciosa torta de chocolate con capas de ganache y un toque
+                                    de avellanas. Personalizable con mensajes especiales.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100" style="width: 18rem;">
+                        <img src="assets/images/tiramisu.png" class="card-img-top" alt="Tiramisu"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Tiramisú Clásico</h5>
+                            <p class="card-text">Un postre italiano individual con capas de café, mascarpone y cacao,
+                                perfecto para finalizar cualquier comida.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100" style="width: 18rem;">
+                        <img src="assets/images/brownie.png" class="card-img-top" alt="Brownie"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Brownie Sin Gluten</h5>
+                            <p class="card-text">Rico y denso, este brownie es perfecto para quienes necesitan evitar
+                                el gluten sin sacrificar el sabor.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100" style="width: 18rem;">
+                        <img src="assets/images/torta_boda.png" class="card-img-top" alt="Torta Boda"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Torta Especial de Boda</h5>
+                            <p class="card-text">Elegante y deliciosa, esta torta está diseñada para ser el centro de
+                                atención en cualquier boda.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
