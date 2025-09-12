@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - Pastelería Mil Sabores</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg-cream: #FFF5E1;
+            --rose: #FFC0CB;
+            --choco: #8B4513;
+            --text: #5D4037;
+        }
+
+        body {
+            background: var(--bg-cream);
+            color: var(--text);
+            font-family: 'Lato', sans-serif;
+        }
+
+        .topbar {
+            background: var(--bg-cream);
+            border-bottom: 2px solid var(--rose);
+            padding: .65rem 0;
+        }
+
+        .brand-logo {
+            height: 32px;
+            width: auto;
+            border-radius: 4px;
+        }
+
+        .brand-name {
+            font-family: 'Pacifico', cursive;
+            color: var(--choco);
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .top-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .top-links a:hover {
+            color: var(--choco);
+            text-decoration: underline;
+        }
+
+        .top-links span {
+            margin: 0 .6rem;
+            color: #b9a29b;
+        }
+
+        .cart-area {
+            color: var(--text);
+        }
+
+        .hero-brand {
+            text-align: center;
+            padding: 28px 0 10px;
+        }
+
+        .hero-brand img {
+            height: 110px;
+            width: auto;
+            border-radius: 8px;
+        }
+
+        .hero-brand h1 {
+            font-family: 'Pacifico', cursive;
+            color: var(--choco);
+            font-size: 1.9rem;
+            margin-top: 12px;
+        }
+
+        .login-panel {
+            background: var(--bg-cream);
+            border: 1px solid var(--rose);
+            border-radius: .25rem;
+            max-width: 540px;
+            margin: 10px auto 50px;
+            padding: 18px;
+        }
+
+        .login-panel .panel-head {
+            background: var(--rose);
+            border: 1px solid var(--rose);
+            border-radius: .25rem;
+            color: var(--choco);
+            font-weight: 600;
+            font-size: .95rem;
+            padding: .4rem .6rem;
+            margin-bottom: 14px;
+        }
+
+        .btn-login {
+            min-width: 160px;
+            background: var(--choco);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .btn-login:hover {
+            background: #A0522D;
+        }
+
+        footer {
+            background: var(--choco);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container d-flex align-items-center">
+            <div class="d-flex align-items-center gap-2">
+                <img src="assets/images/logo-pasteleria.png" alt="Pastelería Mil Sabores" class="brand-logo">
+                <span class="brand-name">Pastelería Mil Sabores</span>
+            </div>
+            <nav class="ms-4 flex-grow-1 d-none d-md-flex justify-content-center top-links">
+                <a href="index.html">Inicio</a><span>|</span>
+                <a href="#">Productos</a><span>|</span>
+                <a href="#">Nosotros</a><span>|</span>
+                <a href="#">Blogs</a><span>|</span>
+                <a href="#">Contacto</a>
+            </nav>
+            <div class="ms-auto d-flex align-items-center gap-2 cart-area">
+                <span>🛒</span><span>Carrito de compras (0)</span>
+            </div>
+        </div>
+    </header>
+    <section class="hero-brand container">
+        <img src="assets/images/logo-pasteleria.png" alt="Logo grande Pastelería">
+        <h1>Pastelería Mil Sabores</h1>
+    </section>
+    <main class="container">
+        <div class="login-panel shadow-sm">
+            <div class="panel-head">Inicio de sesión</div>
+
+            <form id="formLogin" novalidate>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">CORREO</label>
+                    <input type="email" class="form-control" id="correo" placeholder="usuario@duoc.cl" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="contrasena" class="form-label">CONTRASEÑA</label>
+                    <input type="password" class="form-control" id="contrasena" required>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-login">Iniciar sesión</button>
+                </div>
+            </form>
+
+            <!-- Alertas -->
+            <div class="alert alert-success mt-3 d-none" id="okMsg">¡Inicio de sesión correcto!</div>
+            <div class="alert alert-danger mt-3 d-none" id="errorBox"></div>
+        </div>
+    </main>
+
+    <footer>
+        <small>&copy; 2025 Pastelería Mil Sabores</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Validación simple con alert general
+        const form = document.getElementById('formLogin');
+        const okMsg = document.getElementById('okMsg');
+        const errorBox = document.getElementById('errorBox');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            okMsg.classList.add('d-none');
+            errorBox.classList.add('d-none');
+            errorBox.innerHTML = '';
+
+            const correo = document.getElementById('correo').value.trim();
+            const pass = document.getElementById('contrasena').value;
+            const errores = [];
+
+            if (!/^[^@\s]+@duoc\.cl$/i.test(correo)) {
+                errores.push('El correo debe ser válido y terminar en @duoc.cl.');
+            }
+            if (pass.length < 8) {
+                errores.push('La contraseña debe tener al menos 8 caracteres.');
+            }
+
+            if (errores.length === 0) {
+                okMsg.classList.remove('d-none');
+            } else {
+                const strong = document.createElement('strong');
+                strong.textContent = 'Errores encontrados:';
+                const ul = document.createElement('ul');
+                for (let i = 0; i < errores.length; i++) {
+                    const li = document.createElement('li');
+                    li.textContent = errores[i];
+                    ul.appendChild(li);
+                }
+                errorBox.appendChild(strong);
+                errorBox.appendChild(ul);
+                errorBox.classList.remove('d-none');
+            }
+        });
+    </script>
+</body>
+
+</html>

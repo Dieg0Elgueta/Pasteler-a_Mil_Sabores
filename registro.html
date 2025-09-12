@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Pastelería Mil Sabores</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-cream:#FFF5E1;
+      --rose:#FFC0CB;
+      --choco:#8B4513;
+      --text:#5D4037;
+    }
+
+    body{ background:var(--bg-cream); font-family:'Lato',sans-serif; color:var(--text); }
+
+    /* Barra superior */
+    .topbar{
+      background:var(--bg-cream);
+      border-bottom:2px solid var(--rose);
+      padding:.65rem 0;
+    }
+    .brand-logo{ height:28px; width:auto; display:block; border-radius:4px; }
+    .brand-name{
+      font-family:'Pacifico', cursive;
+      color:var(--choco);
+      font-size:1.4rem;
+      line-height:1;
+    }
+
+    /* Links */
+    .top-links a{
+      color:var(--text);
+      text-decoration:none;
+      font-weight:500;
+    }
+    .top-links a:hover{ color:var(--choco); text-decoration:underline; }
+    .top-links span{ margin:0 .6rem; color:#b9a29b; }
+
+    .cart-area{ color:var(--text); font-size:.95rem; }
+    .cart-icon{ line-height:1; }
+
+    /* Panel formulario */
+    .mockup-panel{
+      background:var(--bg-cream);
+      border:1px solid var(--rose);
+      border-radius:.25rem;
+      max-width:540px;
+      margin:32px auto;
+      padding:18px;
+    }
+    .mockup-panel h2{
+      background:var(--rose);
+      border:1px solid var(--rose);
+      border-radius:.25rem;
+      font-size:1rem;
+      padding:.4rem .6rem;
+      margin-bottom:14px;
+      color:var(--choco);
+      font-weight:600;
+    }
+    .btn-registrar{
+      min-width:140px;
+      background:var(--choco);
+      border:none;
+      color:#FFF;
+      font-weight:600;
+    }
+    .btn-registrar:hover{ background:#A0522D; }
+
+    /* Ocultar errores individuales */
+    .error-text{ display:none !important; }
+
+    footer{
+      background:var(--choco);
+      color:#fff;
+      text-align:center;
+      padding:20px 0;
+      margin-top:50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra superior -->
+  <header class="topbar">
+    <div class="container d-flex align-items-center">
+      <!-- Logo + nombre -->
+      <div class="d-flex align-items-center gap-2">
+        <img src="assets/images/imagen_pasteleria.jpg" alt="Pastelería Mil Sabores" class="brand-logo">
+        <span class="brand-name">Pastelería Mil Sabores</span>
+      </div>
+
+      <!-- Links -->
+      <nav class="ms-4 flex-grow-1 d-none d-md-flex justify-content-center top-links">
+        <a href="index.html">Inicio</a><span>|</span>
+        <a href="#">Productos</a><span>|</span>
+        <a href="#">Nosotros</a><span>|</span>
+        <a href="#">Blogs</a><span>|</span>
+        <a href="#">Contacto</a>
+      </nav>
+
+      <!-- Carrito -->
+      <div class="ms-auto d-flex align-items-center gap-2 cart-area">
+        <span class="cart-icon">🛒</span>
+        <span>Carrito de compras (0)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Panel de registro -->
+  <main class="container py-4">
+    <div class="mockup-panel shadow-sm">
+      <h2>Registro de usuario</h2>
+      <form id="formRegistro" novalidate>
+        <div class="mb-2">
+          <label for="nombreCompleto" class="form-label">NOMBRE COMPLETO</label>
+          <input type="text" class="form-control" id="nombreCompleto" maxlength="50" required>
+          <div class="error-text" id="errNombre">Solo letras y espacios. Máx. 50.</div>
+        </div>
+        <div class="mb-2">
+          <label for="correo" class="form-label">CORREO</label>
+          <input type="email" class="form-control" id="correo" placeholder="usuario@duoc.cl" required>
+          <div class="error-text" id="errCorreo">Correo inválido.</div>
+        </div>
+        <div class="mb-2">
+          <label for="contrasena" class="form-label">CONTRASEÑA</label>
+          <input type="password" class="form-control" id="contrasena" required>
+          <div class="error-text" id="errPass">Contraseña inválida.</div>
+        </div>
+        <div class="mb-2">
+          <label for="confirmacion" class="form-label">CONFIRMAR CONTRASEÑA</label>
+          <input type="password" class="form-control" id="confirmacion" required>
+          <div class="error-text" id="errConfirm">Las contraseñas no coinciden.</div>
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">TELÉFONO (opcional)</label>
+          <input type="tel" class="form-control" id="telefono" placeholder="+56 9 1234 5678">
+          <div class="error-text" id="errTel">Número de teléfono inválido.</div>
+        </div>
+        <div class="row g-2 mb-3">
+          <div class="col-12 col-md-6">
+            <select id="region" class="form-select" required>
+              <option value="" selected disabled>— Seleccione su región —</option>
+              <option value="RM">Región Metropolitana</option>
+              <option value="MA">Región del Maule</option>
+              <option value="NB">Región de Ñuble</option>
+              <option value="BI">Región del Biobío</option>
+            </select>
+            <div class="error-text" id="errRegion">Seleccione una región.</div>
+          </div>
+          <div class="col-12 col-md-6">
+            <select id="comuna" class="form-select" required>
+              <option value="" selected disabled>— Seleccione su comuna —</option>
+            </select>
+            <div class="error-text" id="errComuna">Seleccione una comuna.</div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-registrar">REGISTRAR</button>
+        </div>
+      </form>
+      <!-- Alertas -->
+      <div class="alert alert-success mt-3 d-none" id="okMsg">¡Registro enviado!</div>
+    </div>
+  </main>
+
+  <footer>
+    <small>&copy; 2025 Pastelería Mil Sabores</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const comunasPorRegion = {
+      RM: ["Santiago", "Puente Alto", "Maipú"],
+      MA: ["Talca", "Linares", "Curicó"],
+      NB: ["Chillán", "San Carlos"],
+      BI: ["Concepción", "Talcahuano", "Los Ángeles"]
+    };
+
+    const selRegion = document.getElementById('region');
+    const selComuna = document.getElementById('comuna');
+
+    selRegion.addEventListener('change', function (){
+      const key = selRegion.value;
+      while (selComuna.options.length > 0) selComuna.remove(0);
+
+      const optDefault = document.createElement('option');
+      optDefault.value = "";
+      optDefault.textContent = "— Seleccione su comuna —";
+      optDefault.disabled = true;
+      optDefault.selected = true;
+      selComuna.appendChild(optDefault);
+
+      const lista = comunasPorRegion[key] || [];
+      for (let i = 0; i < lista.length; i++){
+        const opt = document.createElement('option');
+        opt.value = lista[i];
+        opt.textContent = lista[i];
+        selComuna.appendChild(opt);
+      }
+    });
+
+    // Validaciones
+    const form  = document.getElementById('formRegistro');
+    const okMsg = document.getElementById('okMsg');
+
+    // Crear alerta general dinámica
+    const alertGeneral = document.createElement('div');
+    alertGeneral.className = "alert alert-danger d-none mt-3";
+    form.appendChild(alertGeneral);
+
+    form.addEventListener('submit', function (e){
+      e.preventDefault();
+      let ok = true;
+      let errores = [];
+
+      const nombre = document.getElementById('nombreCompleto').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+      const pass   = document.getElementById('contrasena').value;
+      const pass2  = document.getElementById('confirmacion').value;
+      const tel    = document.getElementById('telefono').value.trim();
+
+      if (!/^[A-Za-zÁÉÍÓÚÑáéíóúñ ]{1,50}$/.test(nombre)){
+        ok = false; errores.push("El nombre debe tener solo letras y espacios (máx. 50).");
+      }
+      if (!/^[^@\s]+@duoc\.cl$/i.test(correo)){
+        ok = false; errores.push("El correo debe terminar en @duoc.cl.");
+      }
+      const reLong=/^.{8,}$/, reMay=/[A-ZÁÉÍÓÚÑ]/, reMin=/[a-záéíóúñ]/, reNum=/\d/, reSym=/[^A-Za-z0-9]/;
+      if (!(reLong.test(pass) && reMay.test(pass) && reMin.test(pass) && reNum.test(pass) && reSym.test(pass))){
+        ok = false; errores.push("La contraseña debe tener 8+ caracteres, incluir mayúscula, minúscula, número y símbolo.");
+      }
+      if (pass !== pass2){
+        ok = false; errores.push("Las contraseñas no coinciden.");
+      }
+      if (tel !== ''){
+        const reTel=/^[\d +()-]+$/; const digits=(tel.match(/\d/g)||[]).length;
+        if (!(reTel.test(tel) && digits >= 8)){
+          ok = false; errores.push("El número de teléfono no es válido.");
+        }
+      }
+      if (selRegion.value === ''){
+        ok = false; errores.push("Debe seleccionar una región.");
+      }
+      if (selComuna.value === ''){
+        ok = false; errores.push("Debe seleccionar una comuna.");
+      }
+
+      if (ok){
+        alertGeneral.classList.add('d-none');
+        okMsg.textContent = '¡Registro enviado con éxito!';
+        okMsg.classList.remove('d-none');
+      } else {
+        okMsg.classList.add('d-none');
+        alertGeneral.innerHTML = "<strong>Errores encontrados:</strong><ul><li>" + errores.join("</li><li>") + "</li></ul>";
+        alertGeneral.classList.remove('d-none');
+      }
+    });
+  </script>
+</body>
+</html>
