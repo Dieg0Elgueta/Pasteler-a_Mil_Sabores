@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,84 +10,118 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Tipografías -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap"
+    rel="stylesheet">
 
   <style>
-    :root{
-      --bg-cream:#FFF5E1;
-      --rose:#FFC0CB;
-      --choco:#8B4513;
-      --text:#5D4037;
+    :root {
+      --bg-cream: #FFF5E1;
+      --rose: #FFC0CB;
+      --choco: #8B4513;
+      --text: #5D4037;
     }
 
-    body{ background:var(--bg-cream); font-family:'Lato',sans-serif; color:var(--text); }
+    body {
+      background: var(--bg-cream);
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+    }
 
     /* Barra superior */
-    .topbar{
-      background:var(--bg-cream);
-      border-bottom:2px solid var(--rose);
-      padding:.65rem 0;
+    .topbar {
+      background: var(--bg-cream);
+      border-bottom: 2px solid var(--rose);
+      padding: .65rem 0;
     }
-    .brand-logo{ height:28px; width:auto; display:block; border-radius:4px; }
-    .brand-name{
-      font-family:'Pacifico', cursive;
-      color:var(--choco);
-      font-size:1.4rem;
-      line-height:1;
+
+    .brand-logo {
+      height: 28px;
+      width: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .brand-name {
+      font-family: 'Pacifico', cursive;
+      color: var(--choco);
+      font-size: 1.4rem;
+      line-height: 1;
     }
 
     /* Links */
-    .top-links a{
-      color:var(--text);
-      text-decoration:none;
-      font-weight:500;
+    .top-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
     }
-    .top-links a:hover{ color:var(--choco); text-decoration:underline; }
-    .top-links span{ margin:0 .6rem; color:#b9a29b; }
 
-    .cart-area{ color:var(--text); font-size:.95rem; }
-    .cart-icon{ line-height:1; }
+    .top-links a:hover {
+      color: var(--choco);
+      text-decoration: underline;
+    }
+
+    .top-links span {
+      margin: 0 .6rem;
+      color: #b9a29b;
+    }
+
+    .cart-area {
+      color: var(--text);
+      font-size: .95rem;
+    }
+
+    .cart-icon {
+      line-height: 1;
+    }
 
     /* Panel formulario */
-    .mockup-panel{
-      background:var(--bg-cream);
-      border:1px solid var(--rose);
-      border-radius:.25rem;
-      max-width:540px;
-      margin:32px auto;
-      padding:18px;
+    .mockup-panel {
+      background: var(--bg-cream);
+      border: 1px solid var(--rose);
+      border-radius: .25rem;
+      max-width: 540px;
+      margin: 32px auto;
+      padding: 18px;
     }
-    .mockup-panel h2{
-      background:var(--rose);
-      border:1px solid var(--rose);
-      border-radius:.25rem;
-      font-size:1rem;
-      padding:.4rem .6rem;
-      margin-bottom:14px;
-      color:var(--choco);
-      font-weight:600;
+
+    .mockup-panel h2 {
+      background: var(--rose);
+      border: 1px solid var(--rose);
+      border-radius: .25rem;
+      font-size: 1rem;
+      padding: .4rem .6rem;
+      margin-bottom: 14px;
+      color: var(--choco);
+      font-weight: 600;
     }
-    .btn-registrar{
-      min-width:140px;
-      background:var(--choco);
-      border:none;
-      color:#FFF;
-      font-weight:600;
+
+    .btn-registrar {
+      min-width: 140px;
+      background: var(--choco);
+      border: none;
+      color: #FFF;
+      font-weight: 600;
     }
-    .btn-registrar:hover{ background:#A0522D; }
+
+    .btn-registrar:hover {
+      background: #A0522D;
+    }
 
     /* Ocultar errores individuales */
-    .error-text{ display:none !important; }
+    .error-text {
+      display: none !important;
+    }
 
-    footer{
-      background:var(--choco);
-      color:#fff;
-      text-align:center;
-      padding:20px 0;
-      margin-top:50px;
+    footer {
+      background: var(--choco);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
     }
   </style>
 </head>
+
 <body>
   <!-- Barra superior -->
   <header class="topbar">
@@ -100,17 +135,10 @@
       <!-- Links -->
       <nav class="ms-4 flex-grow-1 d-none d-md-flex justify-content-center top-links">
         <a href="index.html">Inicio</a><span>|</span>
-        <a href="#">Productos</a><span>|</span>
-        <a href="#">Nosotros</a><span>|</span>
-        <a href="#">Blogs</a><span>|</span>
-        <a href="#">Contacto</a>
+        <a href="productos.html">Productos</a><span>|</span>
+        <a href="blog.html">Blogs</a><span>|</span>
+        <a href="contacto.html">Contacto</a>
       </nav>
-
-      <!-- Carrito -->
-      <div class="ms-auto d-flex align-items-center gap-2 cart-area">
-        <span class="cart-icon">🛒</span>
-        <span>Carrito de compras (0)</span>
-      </div>
     </div>
   </header>
 
@@ -187,7 +215,7 @@
     const selRegion = document.getElementById('region');
     const selComuna = document.getElementById('comuna');
 
-    selRegion.addEventListener('change', function (){
+    selRegion.addEventListener('change', function () {
       const key = selRegion.value;
       while (selComuna.options.length > 0) selComuna.remove(0);
 
@@ -199,7 +227,7 @@
       selComuna.appendChild(optDefault);
 
       const lista = comunasPorRegion[key] || [];
-      for (let i = 0; i < lista.length; i++){
+      for (let i = 0; i < lista.length; i++) {
         const opt = document.createElement('option');
         opt.value = lista[i];
         opt.textContent = lista[i];
@@ -208,7 +236,7 @@
     });
 
     // Validaciones
-    const form  = document.getElementById('formRegistro');
+    const form = document.getElementById('formRegistro');
     const okMsg = document.getElementById('okMsg');
 
     // Crear alerta general dinámica
@@ -216,44 +244,44 @@
     alertGeneral.className = "alert alert-danger d-none mt-3";
     form.appendChild(alertGeneral);
 
-    form.addEventListener('submit', function (e){
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
       let ok = true;
       let errores = [];
 
       const nombre = document.getElementById('nombreCompleto').value.trim();
       const correo = document.getElementById('correo').value.trim();
-      const pass   = document.getElementById('contrasena').value;
-      const pass2  = document.getElementById('confirmacion').value;
-      const tel    = document.getElementById('telefono').value.trim();
+      const pass = document.getElementById('contrasena').value;
+      const pass2 = document.getElementById('confirmacion').value;
+      const tel = document.getElementById('telefono').value.trim();
 
-      if (!/^[A-Za-zÁÉÍÓÚÑáéíóúñ ]{1,50}$/.test(nombre)){
+      if (!/^[A-Za-zÁÉÍÓÚÑáéíóúñ ]{1,50}$/.test(nombre)) {
         ok = false; errores.push("El nombre debe tener solo letras y espacios (máx. 50).");
       }
-      if (!/^[^@\s]+@duoc\.cl$/i.test(correo)){
+      if (!/^[^@\s]+@duoc\.cl$/i.test(correo)) {
         ok = false; errores.push("El correo debe terminar en @duoc.cl.");
       }
-      const reLong=/^.{8,}$/, reMay=/[A-ZÁÉÍÓÚÑ]/, reMin=/[a-záéíóúñ]/, reNum=/\d/, reSym=/[^A-Za-z0-9]/;
-      if (!(reLong.test(pass) && reMay.test(pass) && reMin.test(pass) && reNum.test(pass) && reSym.test(pass))){
+      const reLong = /^.{8,}$/, reMay = /[A-ZÁÉÍÓÚÑ]/, reMin = /[a-záéíóúñ]/, reNum = /\d/, reSym = /[^A-Za-z0-9]/;
+      if (!(reLong.test(pass) && reMay.test(pass) && reMin.test(pass) && reNum.test(pass) && reSym.test(pass))) {
         ok = false; errores.push("La contraseña debe tener 8+ caracteres, incluir mayúscula, minúscula, número y símbolo.");
       }
-      if (pass !== pass2){
+      if (pass !== pass2) {
         ok = false; errores.push("Las contraseñas no coinciden.");
       }
-      if (tel !== ''){
-        const reTel=/^[\d +()-]+$/; const digits=(tel.match(/\d/g)||[]).length;
-        if (!(reTel.test(tel) && digits >= 8)){
+      if (tel !== '') {
+        const reTel = /^[\d +()-]+$/; const digits = (tel.match(/\d/g) || []).length;
+        if (!(reTel.test(tel) && digits >= 8)) {
           ok = false; errores.push("El número de teléfono no es válido.");
         }
       }
-      if (selRegion.value === ''){
+      if (selRegion.value === '') {
         ok = false; errores.push("Debe seleccionar una región.");
       }
-      if (selComuna.value === ''){
+      if (selComuna.value === '') {
         ok = false; errores.push("Debe seleccionar una comuna.");
       }
 
-      if (ok){
+      if (ok) {
         alertGeneral.classList.add('d-none');
         okMsg.textContent = '¡Registro enviado con éxito!';
         okMsg.classList.remove('d-none');
@@ -265,4 +293,5 @@
     });
   </script>
 </body>
+
 </html>
