@@ -258,6 +258,9 @@
       if (!/^[A-Za-zÁÉÍÓÚÑáéíóúñ ]{1,50}$/.test(nombre)) {
         ok = false; errores.push("El nombre debe tener solo letras y espacios (máx. 50).");
       }
+      if (nombre.length < 3) {
+        ok = false; errores.push('El nombre debe tener al menos 3 caracteres.');
+      }
       if (!/^[^@\s]+@duoc\.cl$/i.test(correo)) {
         ok = false; errores.push("El correo debe terminar en @duoc.cl.");
       }
